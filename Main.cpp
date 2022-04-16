@@ -1,6 +1,6 @@
 #include "EntityList.h"
 
-/*HOOK CLASS VEHICLE*\
+/////HOOK CLASS VEHICLE
 void (*orig_VehicleUpdate)(void *componentPlayer);
 void _VehicleUpdate(void *player) {
   
