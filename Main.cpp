@@ -42,5 +42,6 @@ void _VehicleUpdate(void *player) {
             
 /////Put this on your hack thread
 
+ vehicleManager = new VehicleManager();
 HOOK(string2Offset(OBFUSCATE_KEY("0x10100C8", 'k')), _VehicleUpdate, orig_VehicleUpdate);
             
