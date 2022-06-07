@@ -1,12 +1,14 @@
 #include "EntityList.h"
 
 /////HOOK CLASS VEHICLE
-void (*orig_VehicleUpdate)(void *componentPlayer);
-void _VehicleUpdate(void *player) {
-  
+void (*orig_VehicleUpdate)(void *componentv);
+void _VehicleUpdate(void *v) {
+  if(v != NULL){
+     vehicleManager->tryAddEnemy(player);
+     vehicleManager->updateEnemies(player);
+  }
   ///direct implementation  may cause crash so use it by making proper conditions
-  vehicleManager->tryAddEnemy(player);
-  vehicleManager->updateEnemies(player);
+ 
   
   orig_VehicleUpdate(player);
 }
